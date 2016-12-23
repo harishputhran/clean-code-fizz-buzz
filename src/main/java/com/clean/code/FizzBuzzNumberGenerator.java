@@ -13,6 +13,7 @@ public class FizzBuzzNumberGenerator {
 		textMap = new HashMap<>();
 		textMap.put(3,  "Fizz");
 		textMap.put(5,  "Buzz");
+		textMap.put(15,  "FizzBuzz");
 	}
 
 	public String generateText(InputNumber inputNumber) {
@@ -20,10 +21,10 @@ public class FizzBuzzNumberGenerator {
 	}
 
 	protected String getText(InputNumber inputNumber) {
-		if(inputNumber.isDivisibleBy3()){
+		if(inputNumber.isDivisibleBy3() && !inputNumber.isDivisibleBy5()){
 			return textMap.get(3);
 		}
-		if(inputNumber.isDivisibleBy5()){
+		if(inputNumber.isDivisibleBy5() && !inputNumber.isDivisibleBy3()){
 			return textMap.get(5);
 		}
 		return textMap.getOrDefault(inputNumber.getValue(), inputNumber.getValueAsString());
