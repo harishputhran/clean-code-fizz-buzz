@@ -3,6 +3,8 @@ package com.clean.code;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.clean.code.input.InputNumber;
+
 public class FizzBuzzNumberGenerator {
 	
 	private Map<Integer, String> textMap;
@@ -14,7 +16,7 @@ public class FizzBuzzNumberGenerator {
 		textMap.put(6,  "Fizz");
 	}
 
-	public String generateText(int inputNumber) {
-		return textMap.getOrDefault(inputNumber, null);
+	public String generateText(InputNumber inputNumber) {
+		return textMap.getOrDefault(inputNumber.getValue(), null);
 	}
 }

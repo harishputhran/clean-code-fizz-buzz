@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import com.clean.code.input.InputNumber;
+
 @RunWith(JUnit4.class)
 public class FizzBuzzNumberGeneratorShould {
 	
@@ -13,17 +15,17 @@ public class FizzBuzzNumberGeneratorShould {
 	
 	@Test
 	public void returnFizzWhenInputNumberIs3(){
-		assertEquals("Fizz", fizzBuzzNumberGenerator.generateText(3));
+		assertEquals("Fizz", fizzBuzzNumberGenerator.generateText(new InputNumber(3)));
 	}
 	
 	@Test
 	public void returnBuzzWhenInputNumberIs5(){
-		assertEquals("Buzz", fizzBuzzNumberGenerator.generateText(5));
+		assertEquals("Buzz", fizzBuzzNumberGenerator.generateText(new InputNumber(5)));
 	}
 	
 	@Test
 	public void returnFizzWhenInputNumberIs6(){
-		assertEquals("Fizz", fizzBuzzNumberGenerator.generateText(6));
+		assertEquals("Fizz", fizzBuzzNumberGenerator.generateText(new InputNumber(6)));
 	}
 
 }
