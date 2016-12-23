@@ -9,24 +9,21 @@ public class FizzBuzzNumberGenerator {
 	
 	private Map<Integer, String> textMap;
 	
+	private DivisorFinder divisorFinder;
+	
 	public FizzBuzzNumberGenerator(){
 		textMap = new HashMap<>();
 		textMap.put(3,  "Fizz");
 		textMap.put(5,  "Buzz");
 		textMap.put(15,  "FizzBuzz");
+		divisorFinder = new DivisorFinder();
 	}
 
 	public String generateText(InputNumber inputNumber) {
 		return getText(inputNumber);
 	}
 
-	protected String getText(InputNumber inputNumber) {
-		if(inputNumber.isDivisibleBy3() && !inputNumber.isDivisibleBy5()){
-			return textMap.get(3);
-		}
-		if(inputNumber.isDivisibleBy5() && !inputNumber.isDivisibleBy3()){
-			return textMap.get(5);
-		}
-		return textMap.getOrDefault(inputNumber.getValue(), inputNumber.getValueAsString());
+	protected String getText(InputNumber inputNumber) {		
+		return textMap.getOrDefault(divisorFinder.findDivisibility(inputNumber), inputNumber.getValueAsString());
 	}
 }
