@@ -24,7 +24,7 @@ public class InputNumber {
 		return value % 5 == 0;
 	}	
 	
-	public boolean isDivisibleBy15(){
+	public boolean isDivisibleBy3And5(){
 		return isDivisibleBy3() && isDivisibleBy5();
 	}
 }
