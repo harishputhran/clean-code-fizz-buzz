@@ -12,14 +12,8 @@ public class DivisorFinder {
 		return isNumberDivisbleBy3Or5(inputNumber);		
 	}
 
-	private InputNumber isNumberDivisbleBy3Or5(InputNumber inputNumber) {		
-		if(inputNumber.isDivisibleBy3()){
-			new InputNumber(3);
-		}
-		if(inputNumber.isDivisibleBy5()){
-			new InputNumber(5);
-		}
-		return inputNumber;
+	private InputNumber isNumberDivisbleBy3Or5(InputNumber inputNumber) {
+		return inputNumber.isDivisibleBy3() ? new InputNumber(3) 
+											: (inputNumber.isDivisibleBy5() ? new InputNumber(5) : inputNumber) ;
 	}
-
 }
