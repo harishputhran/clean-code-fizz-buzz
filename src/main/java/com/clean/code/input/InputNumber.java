@@ -11,5 +11,12 @@ public class InputNumber {
 	public int getValue(){
 		return value;
 	}
-
+	
+	public boolean isDivisibleBy3(){
+		return value % 3 == 0;
+	}
+	
+	public boolean isDivisibleBy5(){
+		return value % 5 == 0;
+	}
 }
