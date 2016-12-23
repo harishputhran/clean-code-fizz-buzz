@@ -11,6 +11,7 @@ public class FizzBuzzNumberGenerator {
 		textMap = new HashMap<>();
 		textMap.put(3,  "Fizz");
 		textMap.put(5,  "Buzz");
+		textMap.put(6,  "Fizz");
 	}
 
 	public String generateText(int inputNumber) {
