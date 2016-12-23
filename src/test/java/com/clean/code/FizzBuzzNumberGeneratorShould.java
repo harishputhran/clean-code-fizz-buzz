@@ -32,5 +32,10 @@ public class FizzBuzzNumberGeneratorShould {
 	public void return2WhenInputNumberIs2(){
 		assertEquals("2", fizzBuzzNumberGenerator.generateText(new InputNumber(2)));
 	}
+	
+	@Test
+	public void returnBuzzWhenInputNumberIs10(){
+		assertEquals("Buzz", fizzBuzzNumberGenerator.generateText(new InputNumber(10)));
+	}
 
 }
