@@ -1,22 +1,17 @@
 package com.clean.code;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.clean.code.input.InputNumber;
+import com.clean.code.text.TextGenerator;
 
 public class FizzBuzzNumberGenerator {
 	
-	private Map<Integer, String> textMap;
-	
 	private DivisorFinder divisorFinder;
 	
+	private TextGenerator textGenerator;
+	
 	public FizzBuzzNumberGenerator(){
-		textMap = new HashMap<>();
-		textMap.put(3,  "Fizz");
-		textMap.put(5,  "Buzz");
-		textMap.put(15,  "FizzBuzz");
 		divisorFinder = new DivisorFinder();
+		textGenerator = new TextGenerator();
 	}
 
 	public String generateText(InputNumber inputNumber) {
@@ -24,6 +19,6 @@ public class FizzBuzzNumberGenerator {
 	}
 
 	protected String getText(InputNumber inputNumber) {		
-		return textMap.getOrDefault(divisorFinder.findDivisibility(inputNumber), inputNumber.getValueAsString());
+		return textGenerator.generateText(divisorFinder.findDivisibility(inputNumber));
 	}
 }
