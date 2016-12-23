@@ -23,6 +23,9 @@ public class FizzBuzzNumberGenerator {
 		if(inputNumber.isDivisibleBy3()){
 			return textMap.get(3);
 		}
+		if(inputNumber.isDivisibleBy5()){
+			return textMap.get(5);
+		}
 		return textMap.getOrDefault(inputNumber.getValue(), inputNumber.getValueAsString());
 	}
 }
