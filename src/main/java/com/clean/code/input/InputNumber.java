@@ -12,6 +12,10 @@ public class InputNumber {
 		return value;
 	}
 	
+	public String getValueAsString(){
+		return String.valueOf(value);
+	}
+	
 	public boolean isDivisibleBy3(){
 		return value % 3 == 0;
 	}
